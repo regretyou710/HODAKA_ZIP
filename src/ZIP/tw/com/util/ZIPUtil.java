@@ -73,13 +73,13 @@ public class ZIPUtil {
 	public static void zip(String srcZIPFile, String destZIPFile) throws Exception {
 		// 指定壓縮完成後zip檔案的儲存路徑
 		ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(destZIPFile));
-		System.out.println(srcZIPFile + " " + destZIPFile);
 
 		// 獲取來源目錄下的所有檔案
 		File[] files = new File(srcZIPFile).listFiles();
-
 		for (String item : filterData) {
 			if (!new File(item).exists()) {
+				zos.close();
+				new File(destZIPFile).delete();
 				throw new IOException(String.format("過濾路徑%s不存在!", item));
 			}
 		}

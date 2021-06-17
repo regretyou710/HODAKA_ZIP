@@ -24,13 +24,13 @@ public class ZIPExe {
 					throw new IOException("來源路徑不存在!");
 
 				File destFile = new File(item.getDestFile());
-				//if (!destFile.exists())
-					//destFile.mkdir();
-				
-					ZIPUtil.zip(srcFile.getAbsolutePath(), destFile.getAbsolutePath());
+
+				ZIPUtil.zip(srcFile.getAbsolutePath(), destFile.getAbsolutePath());
 				double endTime = System.currentTimeMillis();
 				logger.info("{}壓縮檔案成功!花費時間{}秒", item.getSrcFile(), (endTime - startTime) / 1000);
-			}			
+
+			}
+
 		} catch (Exception e) {
 			logger.error("出現異常:", e);
 			// e.printStackTrace();

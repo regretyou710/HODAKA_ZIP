@@ -2,10 +2,8 @@
     "compressObjList": [
         {
             "srcFile": "D:\\test",
-            "destFile": "G:\\test.zip",
-            "filterData": [
-                "D:\\test\\A"
-            ]
+            "destFile": "D:\\test.zip",
+            "filterData": ["D:\\test\\A"]
         }
     ]
 }
