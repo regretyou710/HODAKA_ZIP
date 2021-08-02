@@ -18,7 +18,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.google.gson.Gson;
 
-import ZIP.ZIPExe;
 import ZIP.tw.com.bean.CompressObj;
 import ZIP.tw.com.bean.CompressObjList;
 
@@ -101,9 +100,14 @@ public class ZIPUtil {
 	}
 
 	public static List<CompressObj> getCompressObjList() throws IOException {
-		InputStream is = ZIPExe.class.getClassLoader().getResourceAsStream("ZIP/CompressObjList.json");
-		// InputStream is = new FileInputStream(new
-		// File("./CompressObjList.json"));
+		InputStream is = null;
+		File jsonFile = new File("./CompressObjList.json");
+		
+		if (jsonFile.exists())
+			is = new FileInputStream(jsonFile);
+		else
+			is = ZIPUtil.class.getClassLoader().getResourceAsStream("ZIP/CompressObjList.json");
+
 		InputStreamReader isr = new InputStreamReader(is, "utf-8");
 		BufferedReader br = new BufferedReader(isr);
 

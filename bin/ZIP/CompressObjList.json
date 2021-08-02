@@ -3,7 +3,9 @@
         {
             "srcFile": "D:\\test",
             "destFile": "D:\\test.zip",
-            "filterData": ["D:\\test\\A"]
+            "filterData": [
+                "D:\\test\\A"
+            ]
         }
     ]
 }
